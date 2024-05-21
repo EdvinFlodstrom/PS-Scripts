@@ -11,3 +11,9 @@ This script does two things: 1) It changes the directory of the current PowerShe
 ### StartQuiz.ps1
 
 This script does the same as the above, but with a bit of added functionality. The frontend PowerShell instance also runs `npm start`, and the backend PowerShell instance runs `dotnet watch run --launch-profile https`.
+
+## General
+
+### CdDir.ps1
+
+This is a small script that I wrote, mainly for testing purposes. It accepts the name of a directory to search for, in `~/`, and an optional boolean for whether or not to run `git status`. So, say you run it with: `.\CdDir.ps1 React-Quiz`. PowerShell moves to that directory (if it exists, otherwise it throws an error) and runs `git status`. I mostly wrote this for learning purposes, I doubt I'll ever actually need this sort of script for anything. Though, with improvements, it may become useful eventually...
