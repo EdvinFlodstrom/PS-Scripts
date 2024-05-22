@@ -17,3 +17,9 @@ This script does the same as the above, but with a bit of added functionality. T
 ### CdDir.ps1
 
 This is a small script that I wrote, mainly for testing purposes. It accepts the name of a directory to search for, in `~/`, and an optional boolean for whether or not to run `git status`. So, say you run it with: `.\CdDir.ps1 React-Quiz`. PowerShell moves to that directory (if it exists, otherwise it throws an error) and runs `git status`. I mostly wrote this for learning purposes, I doubt I'll ever actually need this sort of script for anything. Though, with improvements, it may become useful eventually...
+
+## File
+
+### CreatePdfWithDateAndCompany
+
+This script takes three inputs. The first one is the input file path, the second one is the folder path for the output file, and the third is the name of the company to appear in the PDF. What the script does is that it replaces placeholder '[Date]' and '[Company]' with proper values. So, '[Date]' is replaced with the current date (YYYY-MM-DD), and '[Company]' is replaced with the provided name of the company, such as 'My Company'.
