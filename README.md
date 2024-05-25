@@ -20,6 +20,10 @@ This is a small script that I wrote, mainly for testing purposes. It accepts the
 
 ## File
 
-### CreatePdfWithDateAndCompany
+### CreatePdfWithDateAndCompany.ps1
 
 This script takes three inputs. The first one is the input file path, the second one is the folder path for the output file, and the third is the name of the company to appear in the PDF. What the script does is that it replaces placeholder '[Date]' and '[Company]' with proper values. So, '[Date]' is replaced with the current date (YYYY-MM-DD), and '[Company]' is replaced with the provided name of the company, such as 'My Company'.
+
+### CreatePdf.ps1
+
+This script is much like the one above, but without replacing any contents. It simply converts the input .docx file to a .pdf file.

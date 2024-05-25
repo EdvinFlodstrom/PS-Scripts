@@ -56,3 +56,7 @@ So the above was working, but I wasn't satisfied. I wanted to convert a .docx to
 
 Ah, seems I skipped on some journaling. So, the problem above was with relative/absolute paths. The solution was to convert the relative path to an absolute one using `$absPath = (Resolve-Path -Path $path).Path`. So with that solved, it's now working. I also ran into a problem of it only changing the date and not the company name. I realized relatively quickly that it was because the placeholder for the company name was 'Företag'. Illegal move. Changed that to 'Company' and now it works (seems it doesn't like 'Ö'). The following link proved fruitful in my search for answers:  
 'https://codereview.stackexchange.com/questions/174455/powershell-script-to-find-and-replace-in-word-document-including-header-footer'
+
+## 2024-05-25
+
+Hm, so I copied the script mentioned above and adjusted it. I wanted this one to be a simple convert from .docx to .pdf. I thought I'd fixed it after a few minutes, but something went wrong and the script broke. So, I entered the debugger and realized that I'd forgotten to remove/replace a variable. Namely, the `$companyName` one. Since this new script doesn't take such a variable, I instead replaced it with some other stuff. Those variables are, by the way, for constructing the output file path. In other words, the name of the file to be created. Which is why the script broke - a file called `.pdf` is invalid. So, with that fixed, the script now works perfectly. These two file scripts will certainly save me a lot of time, I think.
