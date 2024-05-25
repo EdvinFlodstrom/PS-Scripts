@@ -3,7 +3,10 @@ param (
     [string]$inputFilePath,
 
     [Parameter(Mandatory = $true)]
-    [string]$outputFolderPath
+    [string]$outputFolderPath,
+
+    [Parameter(Mandatory = $true)]
+    [string]$name
 )
 
 # Ensure folder path ends with a backslash
@@ -11,8 +14,10 @@ if (-not $outputFolderPath.EndsWith("\")) {
     $outputFolderPath += "\"
 }
 
+$date = (Get-Date).ToString("yyyy")
+
 # Construct the new file name and its path
-$outputFileName = $companyName + ".pdf"
+$outputFileName = "CV " + $name + " " + $date + ".pdf"
 $outputFilePath = (Resolve-Path -Path $outputFolderPath).Path + $outputFileName
 
 # Word application object
